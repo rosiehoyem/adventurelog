@@ -1,15 +1,13 @@
 class EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
+  respond_to :json
 
-  # GET /entries
-  # GET /entries.json
   def index
-    @entries = Entry.all
+    respond_with Entry.all
   end
 
-  # GET /entries/1
-  # GET /entries/1.json
   def show
+    respond_with Entry.find(params[:id])
   end
 
   # GET /entries/new
@@ -20,6 +18,20 @@ class EntriesController < ApplicationController
   # GET /entries/1/edit
   def edit
   end
+
+  # Do the built in methods do the sam thing? (add to adventure controller as well)
+  # def create
+  #   respond_with Entry.create(params[:entry])
+  # end
+
+  # def update
+  #   respond_with Entry.update(params[:id], params[:entry])
+  # end
+
+  # def destroy
+  #   respond_with Entry.destroy(params[:id])
+  # end
+
 
   # POST /entries
   # POST /entries.json
@@ -60,6 +72,7 @@ class EntriesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

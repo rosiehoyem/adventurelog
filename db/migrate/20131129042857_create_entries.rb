@@ -4,7 +4,7 @@ class CreateEntries < ActiveRecord::Migration
       t.string :event
       t.string :date
       t.string :location
-      t.string :type
+      t.string :socialmedia_provider
       t.references :adventure, index: true
 
       t.timestamps

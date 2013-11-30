@@ -10,5 +10,12 @@
   <%= @adventure.description %>
 </p>
 
+<h2>Entries</h2>
+<ul>
+	<% @adventure.entries.each do |entry| %>
+	<li><%= link_to entry.event, entry_path %></li>
+	<% end %>
+</ul>
+
 <%= link_to 'Edit', edit_adventure_path(@adventure) %> |
 <%= link_to 'Back', adventures_path %>

@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20131129042857) do
     t.string   "event"
     t.string   "date"
     t.string   "location"
-    t.string   "type"
+    t.string   "socialmedia_provider"
     t.integer  "adventure_id"
     t.datetime "created_at"
     t.datetime "updated_at"
